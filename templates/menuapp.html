@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app Menu</title>
+    <link rel="menu" href="weatherapp.html" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://png.pngtree.com/png-clipart/20190614/original/pngtree-menu-vector-icon-png-image_3791388.jpg"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <style>
+      .dark {
+        background-color: #222;
+        color: #e6e6e6;
+      }
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      body {
+        background-image: url("https://icon-library.com/images/weather-icon-gif/weather-icon-gif-12.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100%;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 100px;
+        background-position: center;
+      }
+      .logo {
+        max-height: px;
+        background-position: center;
+      }
+      nav ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 10px 20px;
+        background-position: center;
+      }
+      nav ul li a {
+        color: #1d1d24;
+        position: relative;
+        padding: 5px 0;
+        background-position: center;
+      }
+      nav ul li a:hover {
+        color: #1098dc;
+        background-position: center;
+      }
+      nav ul li a:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: #1098dc;
+        transition: 0.3s;
+        bottom: 0;
+        background-position: center;
+      }
+      nav ul li a:hover:after {
+        width: 100%;
+        background-position: center;
+      }
+      .btn {
+        color: #fff;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 16px 40px;
+        border-radius: 500px;
+        display: inline-block;
+        font-weight: 500;
+        transition: all 0.4s ease-in-out;
+        background-size: 152% 100%;
+        background: #1098dc;
+        border: 2px solid #1098dc;
+      }
+      .btn:hover {
+        background: transparent;
+        border-color: #1098dc;
+        color: #1098dc;
+      }
+      h1 {
+        background: #1098dc;
+        font-size: 1.75rem;
+        text-align: center;
+        padding: 18px 0;
+        color: #fff;
+      }
+    </style>
+
+    <!-- <h1 style="text-align: center">Welcome To Weather App</h1> -->
+    <div class="mode">
+      Dark mode:
+      <span class="change">OFF</span>
+    </div>
+    <h1>Welcome To Weather App</h1>
+    <nav>
+      <class ="logo" />
+      <ul>
+        <li><a href="#" class="btn">Home</a></li>
+        <li>
+          <a href="weatherapp" class="btn">Check Weather Forcast</a>
+        </li>
+        <li><a href="#about_us" class="btn">About</a></li>
+        <li><a href="#" class="btn">Portfolio</a></li>
+        <li><a href="#contact_us" class="btn">Contact</a></li>
+      </ul>
+    </nav>
+
+    <pre style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      Meet our brand-new weather app, your trusty sidekick for staying on top of the ever-changing weather. It's not just another weather app; it's your
+      friendly companion, making weather updates a breeze. We've crafted it with a sleek, easy-to-use design, so you can effortlessly check the current
+      conditions, see what's coming up in the next few hours or days, and even keep an eye on those radar maps. Whether you're planning a weekend
+      adventure or just need to know if you should bring an umbrella, this app's got you covered. Stay ahead of the game and make smart choices with the
+      help of our handy weather app. Give it a try now, and make staying informed about the weather a whole lot more enjoyable.
+    </pre>
+    <br />
+
+    <section id="about_us">
+      <h2>Components Of this Weather Predictor</h2>
+      <ol>
+        <li>Python Flask</li>
+        <li>User friendly Interface</li>
+        <li>Current location checker</li>
+        <li>5-day forecast</li>
+        <li>API Used for accurate measures</li>
+        <li>Weather alerts - Temperature, Humidity, Wind</li>
+      </ol>
+
+      <p>
+        Using our weather app is simple and intuitive. Here's how to get
+        started:
+      </p>
+      <ol>
+        <li>
+          Open the app by clicking the "Click" button or using the menu link.
+        </li>
+        <li>
+          Explore the current weather conditions in your area or any other
+          location.
+        </li>
+        <li>
+          Check the hourly and daily forecasts to plan your activities
+          accordingly.
+        </li>
+        <li>
+          Keep an eye on radar maps to stay informed about approaching weather
+          systems.
+        </li>
+        <li>
+          Customize your settings to get personalized weather alerts for
+          temperature, humidity, and wind.
+        </li>
+      </ol>
+      <p>
+        With our app, you'll always be prepared for whatever Mother Nature has
+        in store. Stay ahead of the weather, and enjoy the convenience of our
+        user-friendly interface.
+      </p>
+    </section>
+    <section id="contact_us">
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions, feedback, or need assistance, feel free to
+        reach out to our support team. We're here to help you get the most out
+        of your weather app experience.
+      </p>
+
+      <footer>&copy; 2023 Weather App. All rights reserved.</footer>
+    </section>
+    <script>
+      $(".change").on("click", function () {
+        if ($("body").hasClass("dark")) {
+          $("body").removeClass("dark");
+          $(".change").text("OFF");
+        } else {
+          $("body").addClass("dark");
+          $(".change").text("ON");
+        }
+      });
+    </script>
+  </body>
+</html>

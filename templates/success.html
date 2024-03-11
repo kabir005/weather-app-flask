@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Save Details</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+      /* General Styles */
+      .dark {
+        background-color: #222;
+        color: #e6e6e6;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        text-align: center;
+      }
+      h3 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #666;
+        margin-bottom: 20px;
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+      }
+      .button-container a {
+        margin: 0 10px;
+        padding: 15px 30px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+      }
+      .button-container a:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mode">
+      Dark mode:
+      <span class="change">OFF</span>
+    </div>
+    <div class="container">
+      <h3>Welcome, Admin!</h3>
+      <p>{{msg}}</p>
+      <div class="button-container">
+        <a href="/view">View Logged-in Emails</a>
+        <a href="/menuapp">View Weather App Menu</a>
+      </div>
+      <div>
+        <img
+          src="data:image/png;base64,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"
+          alt="Weather App"
+          style="
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          "
+        />
+      </div>
+    </div>
+    <script>
+      $(".change").on("click", function () {
+        if ($("body").hasClass("dark")) {
+          $("body").removeClass("dark");
+          $(".change").text("OFF");
+        } else {
+          $("body").addClass("dark");
+          $(".change").text("ON");
+        }
+      });
+    </script>
+  </body>
+</html>

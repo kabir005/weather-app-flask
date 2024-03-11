@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+      /* General Styles */
+      .dark {
+        background-color: #222;
+        color: #e6e6e6;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-image_438818.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+      .navbar a {
+        float: left;
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+      .navbar a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+
+      /* Container Styles */
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+      }
+      h2 {
+        color: #333;
+        text-align: center;
+      }
+      p {
+        color: #666;
+        text-align: center;
+      }
+
+      /* Button Styles */
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mode">
+      Dark mode:
+      <span class="change">OFF</span>
+    </div>
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="/add">Sign In</a>
+      <a href="/view">View Records</a>
+      <a href="/delete">Delete Records</a>
+      <a href="help">Help</a>
+      <a href="/about">About</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <h2>Welcome to the Weather Application</h2>
+      <p>Explore the weather forecasts with ease.</p>
+      <div style="text-align: center">
+        <a href="/add" class="btn">Get Started</a>
+      </div>
+    </div>
+    <script>
+      $(".change").on("click", function () {
+        if ($("body").hasClass("dark")) {
+          $("body").removeClass("dark");
+          $(".change").text("OFF");
+        } else {
+          $("body").addClass("dark");
+          $(".change").text("ON");
+        }
+      });
+    </script>
+  </body>
+</html>
